@@ -1,5 +1,7 @@
 package com.thkmon.webstd.database;
 
+import java.sql.SQLException;
+
 import org.apache.commons.dbcp.BasicDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +12,18 @@ public class ThkDataSource extends BasicDataSource {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ThkDataSource.class);
 	
-	public void setUrl(String url) {
+	
+	public synchronized void close() throws SQLException {
+		super.close();
+	}
+	
+	
+	public synchronized void setDriverClassName(String driverClassName) {
+		super.setDriverClassName(driverClassName);
+	}
+	
+	
+	public synchronized void setUrl(String url) {
 		logger.info("ThkDataSource setUrl : BEFORE");
 		
 		String newUrl = url;
