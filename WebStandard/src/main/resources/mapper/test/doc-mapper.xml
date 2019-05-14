@@ -2,10 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="doc">
-	<!-- <select id="selectCount" parameterType="hashmap" resultType="hashmap"> -->
-	<insert id="addDoc">
+	<insert id="addDoc" parameterType="com.thkmon.webstd.doc.data.Doc">
     <![CDATA[
-          INSERT INTO bbDoc
+          INSERT INTO DDOC_DOC
+          (DOC_ID, DOC_TITLE, DOC_CONTENT, REG_USER_ID, REG_USER_NAME, IN_SEARCH_ENGINE)
+          VALUES
+          (#{docId}, #{docTitle}, #{docContent}, #{regUserId}, #{regUserName}, #{inSearchEngine})
     ]]>
 	</insert>
 </mapper>
