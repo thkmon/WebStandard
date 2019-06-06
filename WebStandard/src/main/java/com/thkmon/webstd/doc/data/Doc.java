@@ -11,6 +11,17 @@ public class Doc {
 		검색엔진 등록여부
 	 */
 	
+	/**
+	CREATE TABLE DDOC_DOC (
+		DOC_ID VARCHAR(100),
+	    DOC_TITLE VARCHAR(500),
+	    DOC_CONTENT VARCHAR(4000),
+	    REG_USER_ID VARCHAR(100),
+	    REG_USER_NAME VARCHAR(100),
+	    IN_SEARCH_ENGINE VARCHAR(1)
+	);
+	*/
+	
 	private String docId = "";
 	private String docTitle = "";
 	private String docContent = "";
